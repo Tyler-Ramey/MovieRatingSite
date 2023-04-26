@@ -3,39 +3,6 @@
 <head>
 	<title>Login/Register</title>
 	<?php include_once('..\config\styles.css'); ?>
-    <style>
-        .login-container, .register-container {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: 100vh;
-        }
-
-        .login-box, .register-box {
-              margin: 20px;
-              padding: 20px;
-              border: 1px solid #ccc;
-              border-radius: 5px;
-              background-color: #eee;
-        }
-
-        .login-box {
-            margin-right: 10px;
-        }
-
-        .register-box {
-            margin-left: 10px;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
 </head>
 <body>
 	<?php require('..\config\header.php'); ?>
