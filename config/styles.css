@@ -9,6 +9,7 @@
 		font-family: Arial, sans-serif;
 		font-size: 16px;
 		line-height: 1.5;
+        background-color: black;
 	}
 
 	.header {
@@ -60,6 +61,56 @@
       flex-shrink: 0;
       padding-left: 10px;
     }
+
+    .login-button {
+      display: inline-block;
+      border: 1px solid #ccc;
+      background-color: #eee;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px #ccc;
+    }
+
+    .login-button:hover {
+      background-color: #ddd;
+      cursor: pointer;
+    }
+
+    .login-container, .register-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+        }
+
+        .login-box, .register-box {
+              margin: 20px;
+              padding: 20px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              background-color: #eee;
+        }
+
+        .login-box {
+            margin-right: 10px;
+        }
+
+        .register-box {
+            margin-left: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
 	.main {
 		display: flex;
