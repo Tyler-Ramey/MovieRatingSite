@@ -19,7 +19,7 @@
       </div>
       <div class="register-box">
         <h2>Register</h2>
-        <form method="post" action="register.php">
+        <form method="post" action="..\config\register-user.php">
           <label for="firstname">First Name:</label>
           <input type="text" name="firstname" id="firstname">
           <br>
