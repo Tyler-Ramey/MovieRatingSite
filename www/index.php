@@ -2,6 +2,11 @@
 <html>
 <head>
 	<title>Movie Site</title>
+
+    <?php
+    require('config.php');
+    include_once($includePath\styles.css);
+    ?>
 </head>
 <body>
 	<header class="header">
