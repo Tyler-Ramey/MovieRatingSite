@@ -12,17 +12,18 @@ $username = trim($_POST['username']);
 $password = $_POST['password'];
 
 // Check if user already exists
-$sql = 'SELECT * FROM people WHERE username = :username';
+$sql = 'SELECT COUNT(*) FROM People WHERE username = :username OR email = :email;';
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':username', $username);
+$stmt->bindParam(':email', $email);
 $stmt->execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 //var_dump($result);
 //exit();
 
-if ($result['Username'] == $username) {
-    //User already exists
-    $error = "Username already taken";
+if ($result) {
+    //User already exists or email in system
+    $error = "Username/Email already in use. Please try again";
     echo "<p>" . $error . "</p>";
     header("Refresh:5; url=..\www\login.php");
 } else {
