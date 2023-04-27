@@ -9,7 +9,7 @@
     <div class="login-container">
       <div class="login-box">
         <h2>Login</h2>
-        <form method="post" action="login.php">
+        <form method="post" action="..\config\login-user.php">
           <label for="username">Username:</label>
           <input type="text" name="username" id="username">
           <label for="password">Password:</label>
