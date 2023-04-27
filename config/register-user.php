@@ -17,11 +17,14 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':username', $username);
 $stmt->execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+//var_dump($result);
+//exit();
 
-if ($result) {
-    // User already exists
+if ($result['Username'] == $username) {
+    //User already exists
     $error = "Username already taken";
-    echo `$error`;
+    echo "<p>" . $error . "</p>";
+    header("Refresh:5; url=..\www\login.php");
 } else {
     // Hash password
     $encryptedPass = password_hash($password, PASSWORD_BCRYPT);
