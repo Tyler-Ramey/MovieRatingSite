@@ -11,6 +11,13 @@
           <button class="search-button">&#10148;</button>
         </div>
 		<div class="login">
-			<a href="login.php" class="login-button">Login / Register</a>
+			<?php
+            session_start();
+            if (isset($_SESSION['username'])) {
+                echo '<h2>' . $_SESSION['username'] . '</h2>';
+            } else {
+                echo '<a href="login.php" class="login-button">Login / Register</a>';
+            }
+            ?>
 		</div>
 	</header>
