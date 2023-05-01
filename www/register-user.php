@@ -22,7 +22,7 @@ if ($result) {
     //User already exists or email in system
     $error = "Username/Email already in use. Please try again";
     echo "<p>" . $error . "</p>";
-    header("Refresh:5; url=..\www\login.php");
+    header("Refresh:5; url=login.php");
 } else {
     // Hash password
     $encryptedPass = password_hash($password, PASSWORD_BCRYPT);
@@ -42,7 +42,7 @@ if ($result) {
     session_start();
     session_regenerate_id(true);
     $_SESSION['username'] = $username;
-    header("Location: ..\www\index.php");
+    header("Location: index.php");
     exit();
 }
 ?>
