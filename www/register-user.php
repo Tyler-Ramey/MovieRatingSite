@@ -1,7 +1,6 @@
 <?php
 require_once('..\config\dbconnect.php');
 
-
 $firstname = trim($_POST['firstname']);
 $lastname = trim($_POST['lastname']);
 $email = trim($_POST['email']);
@@ -18,7 +17,7 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 //var_dump($result);
 //exit();
 
-if ($result) {
+if ($result["COUNT(*)"] == 1) {
     //User already exists or email in system
     $error = "Username/Email already in use. Please try again";
     echo "<p>" . $error . "</p>";
