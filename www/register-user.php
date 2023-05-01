@@ -1,5 +1,5 @@
 <?php
-require_once('dbconnect.php');
+require_once('..\config\dbconnect.php');
 
 
 $firstname = trim($_POST['firstname']);
