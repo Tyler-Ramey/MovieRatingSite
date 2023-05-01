@@ -61,6 +61,15 @@
       flex-shrink: 0;
       padding-left: 10px;
     }
+    .login h2 {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .login a {
+      display: block;
+      margin-top: 5px;
+    }
 
     .login-button {
       display: inline-block;
