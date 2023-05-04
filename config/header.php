@@ -11,7 +11,7 @@
             session_start();
             if (isset($_SESSION['username'])) {
                 echo '<h2>' . $_SESSION['username'] . '</h2><br>';
-                echo '<a href="logout.php" class="logout-button style="color: blue;"">Logout</a>';
+                echo '<a href="logout.php" class="logout-button style="color: blue;">Logout</a>';
             } else {
                 echo '<a href="login.php" class="login-button">Login / Register</a>';
             }
