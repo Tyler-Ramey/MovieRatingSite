@@ -153,6 +153,18 @@ form {
   margin: 0 auto;
 }
 
+.add-movie-container {
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
 .footer {
   background-color: #eee;
   padding: 10px;
