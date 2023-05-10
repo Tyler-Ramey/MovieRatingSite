@@ -11,6 +11,6 @@ $stmt->bindParam(':title', $title);
 $stmt->bindParam(':releasedate', $releaseDate);
 $stmt->bindParam(':summary', $summary);
 $stmt->execute();
-header('Location: index.php');
+header('Location: admin.php');
 exit();
 ?>
