@@ -170,4 +170,14 @@ form {
   padding: 10px;
   text-align: center;
 }
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: auto;
+}
+
+.nav-links a {
+  margin-right: 50px;
+}
 </style>
