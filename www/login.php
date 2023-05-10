@@ -14,6 +14,7 @@
           <input type="text" name="username" id="username">
           <label for="password">Password:</label>
           <input type="password" name="password" id="password">
+          <br>
           <input type="submit" value="Login">
         </form>
       </div>
@@ -34,6 +35,9 @@
           <br>
           <label for="password">Password:</label>
           <input type="password" name="password" id="password">
+          <br>
+          <label for="confirm_password">Confirm Password:</label>
+          <input type="password" name="confirm_password" id="confirm_password">
           <br>
           <input type="submit" value="Register">
         </form>

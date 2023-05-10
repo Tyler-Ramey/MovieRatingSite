@@ -6,6 +6,7 @@ $lastname = trim($_POST['lastname']);
 $email = trim($_POST['email']);
 $username = trim($_POST['username']);
 $password = $_POST['password'];
+$confirm_pass = $_POST['confirm_password'];
 
 // Check if user already exists
 $sql = 'SELECT COUNT(*) FROM People WHERE username = :username OR email = :email;';
@@ -23,6 +24,15 @@ if ($result["COUNT(*)"] == 1) {
     echo "<p>" . $error . "</p>";
     header("Refresh:5; url=login.php");
 } else {
+
+    // Verify password
+    if ($password !== $confirm_pass) {
+        $error = "Passwords do not match. Please try again";
+        echo "<p>" . $error . "</p>";
+        header("Refresh:5; url=login.php");
+        exit();
+    }
+
     // Hash password
     $encryptedPass = password_hash($password, PASSWORD_BCRYPT);
 
