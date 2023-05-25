@@ -2,6 +2,7 @@
 require_once('../config/dbconnect.php');
 
 // Get the movie ID from the query parameters or any other source
+session_start();
 $movieID = $_GET['id'];
 
 // Prepare and execute the SQL query to fetch the movie details
@@ -17,10 +18,34 @@ if (!$movie) {
     echo 'Movie not found';
     exit();
 }
+
+// Prepare and execute the SQL query to fetch the ratings for the movie and calculate the average rating
+$sql = 'SELECT SUM(Rating) AS totalRating, COUNT(*) AS totalRatings FROM ratings WHERE MovieID = :id';
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':id', $movieID);
+$stmt->execute();
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$totalRatings = $result['totalRatings'];
+$totalRating = $result['totalRating'];
+$averageRating = $totalRatings > 0 ? $totalRating / $totalRatings : 0;
+
+echo $_SESSION['username'];
 ?>
 
 <!-- HTML section to display the movie information -->
 <h1><?php echo $movie['Title']; ?></h1>
 <p>Release Date: <?php echo $movie['ReleaseDate']; ?></p>
 <p>Summary: <?php echo $movie['Summary']; ?></p>
-<!-- Add more HTML elements as needed to display other movie details -->
+<p>Average Rating: <?php echo number_format($averageRating, 1); ?></p>
+
+<!-- Form for users to rate the movie -->
+<form action="process-rating.php" method="POST">
+  <input type="hidden" name="movieID" value="<?php echo $movieID; ?>">
+  <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
+  <label for="rating">Your Rating:</label>
+  <input type="number" name="rating" min="1" max="10" step="0.5" required>
+  <br>
+  <input type="submit" value="Submit Rating">
+</form>
+
