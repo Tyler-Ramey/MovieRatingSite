@@ -29,8 +29,6 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 $totalRatings = $result['totalRatings'];
 $totalRating = $result['totalRating'];
 $averageRating = $totalRatings > 0 ? $totalRating / $totalRatings : 0;
-
-echo $_SESSION['username'];
 ?>
 
 <!-- HTML section to display the movie information -->
@@ -40,12 +38,19 @@ echo $_SESSION['username'];
 <p>Average Rating: <?php echo number_format($averageRating, 1); ?></p>
 
 <!-- Form for users to rate the movie -->
-<form action="process-rating.php" method="POST">
-  <input type="hidden" name="movieID" value="<?php echo $movieID; ?>">
-  <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
-  <label for="rating">Your Rating:</label>
-  <input type="number" name="rating" min="1" max="10" step="0.5" required>
-  <br>
-  <input type="submit" value="Submit Rating">
-</form>
+<?php
+if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+    echo '
+        <form action="process-rating.php" method="POST">
+            <input type="hidden" name="movieID" value="' . $movieID . '">
+            <input type="hidden" name="username" value="' . $_SESSION['username'] . '">
+            <label for="rating">Your Rating:</label>
+            <input type="number" name="rating" min="1" max="10" step="0.5" required>
+            <br>
+            <input type="submit" value="Submit Rating">
+        </form>
+    ';
+}
+?>
+
 

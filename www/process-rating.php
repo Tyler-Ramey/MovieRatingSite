@@ -13,4 +13,8 @@ $stmt->bindParam(':movieID', $movieID);
 $stmt->bindParam(':rating', $rating);
 $stmt->bindParam(':username', $username);
 $stmt->execute();
+
+header("Location: movie.php?id=$movieID");
+exit();
+
 ?>
