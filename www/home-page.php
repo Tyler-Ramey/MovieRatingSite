@@ -1,10 +1,10 @@
 <?php
+session_start(); // Start the session
 require_once('../config/dbconnect.php');
 $sql = 'SELECT * FROM movies ORDER BY releasedate DESC LIMIT 10';
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
-session_start(); // Start the session
 
 ?>
 
