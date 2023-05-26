@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <header class="header">
 		<div class="logo">
 			<img src="logo.png" alt="Movie Site Logo">
@@ -8,7 +9,6 @@
         </div>
 		<div class="login">
 			<?php
-            session_start();
             if (isset($_SESSION['username'])) {
                 echo '<h2>' . $_SESSION['username'] . '</h2><br>';
                 echo '<a href="logout.php" class="logout-button style="color: blue;">Logout</a>';
