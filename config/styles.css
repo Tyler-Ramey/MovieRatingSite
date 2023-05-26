@@ -1,110 +1,110 @@
 <style>
 /* TYPOGRAPHY */
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: black;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: black;
 }
 
 /* LAYOUT */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-  padding: 10px;
-  background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 10px;
+    background-color: #eee;
 }
 
 .logo {
-  width: auto;
-  height: auto;
-  flex-shrink: 0;
-  padding: 10px;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    padding: 10px;
 }
 
 .search-container {
-  display: flex;
-  flex-grow: 1;
-  margin: 10px;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-grow: 1;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .search {
-  flex-grow: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  background-color: #fff;
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
 }
 
 .search-button {
-  background-color: #555;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  padding: 10px;
-  cursor: pointer;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .login {
-  display: flex;
-  margin: 10px;
-  flex-shrink: 0;
-  padding-left: 10px;
+    display: flex;
+    margin: 10px;
+    flex-shrink: 0;
+    padding-left: 10px;
 }
 
 .login h2 {
-  display: inline-block;
-  margin-right: 10px;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 .login a {
-  display: block;
-  margin-top: 5px;
+    display: block;
+    margin-top: 5px;
 }
 
 .login-button {
-  display: inline-block;
-  border: 1px solid #ccc;
-  background-color: #eee;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px #ccc;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #ccc;
 }
 
 .login-button:hover {
-  background-color: #ddd;
-  cursor: pointer;
+    background-color: #ddd;
+    cursor: pointer;
 }
 
 .login-container,
 .register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .login-box,
 .register-box {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #eee;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
 }
 
 .login-box {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .login-button {
@@ -112,162 +112,162 @@ body {
 }
 
 .register-box {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 h2 {
-  text-align: center;
+    text-align: center;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
 }
 
 .left-sidebar,
 .right-sidebar {
-  flex: auto;
-  min-width: auto;
-  margin: 10px;
-  background-color: #eee;
-  padding: 10px;
-  border-radius: 5px;
+    flex: auto;
+    min-width: auto;
+    margin: 10px;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .content {
-  flex: 2;
-  min-width: 400px;
-  margin: 10px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  max-width: 800px;
-  margin: 0 auto;
+    flex: 2;
+    min-width: 400px;
+    margin: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .add-movie-container {
-  width: 80%;
-  max-width: 600px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  background-color: #fff;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
 }
 
 .footer {
-  background-color: #eee;
-  padding: 10px;
-  text-align: center;
+    background-color: #eee;
+    padding: 10px;
+    text-align: center;
 }
 
 .nav-links {
-  display: flex;
-  justify-content: center;
-  margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: auto;
 }
 
 .nav-links a {
-  margin-right: 50px;
+    margin-right: 50px;
 }
 
 /* Movie Page */
 .movie-box {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #eee;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
 }
 
 .movie-info {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .movie-info h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .movie-info p {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .rating {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .rating h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .rating p {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .rating-form {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .comment-form {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .comment-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .comment-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: vertical;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
 }
 
 .comments {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .comments h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .comments ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .comments li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .comments li p {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .friend-request-button {
-  background-color: #555;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 14px;
-  cursor: pointer;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
 }
 </style>

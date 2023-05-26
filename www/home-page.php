@@ -10,11 +10,11 @@ $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <ul>
     <?php foreach($movies as $movie): ?>
-        <li>
-            <a href="movie.php?id=<?php echo $movie['MovieID']; ?>">
-                <?php echo $movie['Title']; ?>
-            </a>
-            <?php $_SESSION['MovieID'] = $movie['MovieID']; // Store the movie ID in session ?>
-        </li>
+    <li>
+        <a href="movie.php?id=<?php echo $movie['MovieID']; ?>">
+            <?php echo $movie['Title']; ?>
+        </a>
+        <?php $_SESSION['MovieID'] = $movie['MovieID']; // Store the movie ID in session ?>
+    </li>
     <?php endforeach; ?>
 </ul>

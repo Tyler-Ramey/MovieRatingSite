@@ -130,9 +130,9 @@ include('../config/styles.css');
             echo '</li>';
 
             // Add a line break after each comment, except for the last one
-        if ($index < count($comments) - 1) {
-            echo '<hr>';
-        }
+            if ($index < count($comments) - 1) {
+                echo '<hr>';
+            }
         }
         echo '</ul>';
         echo '</div>';

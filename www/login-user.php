@@ -21,17 +21,17 @@ if (!$result) {
 $encryptedPassword = $result['password'];
 
 if (password_verify($password, $encryptedPassword)) {
-        // Passwords match
-        session_start();
-        session_regenerate_id(true);
-        $_SESSION['username'] = $username;
-        $_SESSION['admin'] = $result['admin'];
-        header("Location: index.php");
-        exit();
-    } else {
-        // Passwords don't match
-        $error = "Invalid username or password";
-        echo "<p>" . $error . "</p>";
-        header("Refresh:5; url=login.php");
-    }
+    // Passwords match
+    session_start();
+    session_regenerate_id(true);
+    $_SESSION['username'] = $username;
+    $_SESSION['admin'] = $result['admin'];
+    header("Location: index.php");
+    exit();
+} else {
+    // Passwords don't match
+    $error = "Invalid username or password";
+    echo "<p>" . $error . "</p>";
+    header("Refresh:5; url=login.php");
+}
 ?>
