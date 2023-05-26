@@ -116,7 +116,7 @@ include('../config/styles.css');
         echo '<div class="comments">';
         echo '<h2>Comments</h2>';
         echo '<ul>';
-        foreach ($comments as $comment) {
+        foreach ($comments as $index => $comment) {
             echo '<li>';
             echo '<p><strong>Username:</strong> ' . $comment['Username'] . '</p>';
             echo '<p><strong>Comment:</strong> ' . $comment['Comment'] . '</p>';
@@ -128,6 +128,11 @@ include('../config/styles.css');
             }
 
             echo '</li>';
+
+            // Add a line break after each comment, except for the last one
+        if ($index < count($comments) - 1) {
+            echo '<hr>';
+        }
         }
         echo '</ul>';
         echo '</div>';
