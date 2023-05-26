@@ -22,8 +22,10 @@ if ($_FILES['image']['error'] === UPLOAD_ERR_OK) {
 
     // Move the uploaded file to the permanent storage directory
     if (move_uploaded_file($_FILES['image']['tmp_name'], $imageDir . $uniqueFilename)) {
+        $resizedImagePath = resizeImage($imageDir . $uniqueFilename, $imageDir, $uniqueFilename);
+
         // Insert the movie into the database with the image path
-        $imagePath = $imageDir . $uniqueFilename;
+        $imagePath = $resizedImagePath;
         $sql = 'INSERT INTO movies (Title, ReleaseDate, Summary, ImagePath) VALUES (:title, :releaseDate, :summary, :imagePath)';
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':title', $title);
@@ -55,4 +57,29 @@ function generateUniqueFilename($movieName, $extension) {
 function isFileTypeAllowed($fileType) {
     $allowedTypes = ['image/jpeg', 'image/png']; // Add more allowed file types if needed
     return in_array($fileType, $allowedTypes);
+}
+
+// Function to resize the uploaded image while maintaining aspect ratio
+function resizeImage($sourceImagePath, $destinationDirectory, $newFilename) {
+    $thumbHeight = 150;
+    $sourceImage = imagecreatefromstring(file_get_contents($sourceImagePath));
+    $width = imagesx($sourceImage);
+    $height = imagesy($sourceImage);
+    $thumbWidth = floor($width * ($thumbHeight / $height));
+
+    $thumbImage = imagecreatetruecolor($thumbWidth, $thumbHeight);
+    imagecopyresampled($thumbImage, $sourceImage, 0, 0, 0, 0, $thumbWidth, $thumbHeight, $width, $height);
+
+    $resizedImagePath = $destinationDirectory . $newFilename;
+
+    // Save the resized image to the destination directory
+    if (imagejpeg($thumbImage, $resizedImagePath, 80)) {
+        imagedestroy($sourceImage);
+        imagedestroy($thumbImage);
+        return $resizedImagePath;
+    } else {
+        imagedestroy($sourceImage);
+        imagedestroy($thumbImage);
+        die('Error: Failed to save the resized image.');
+    }
 }
