@@ -15,8 +15,6 @@ $stmt->bindParam(':username', $username);
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
-//var_dump($result);
-//exit();
 
 if ($result["COUNT(*)"] == 1) {
     //User already exists or email in system
