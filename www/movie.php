@@ -53,6 +53,13 @@ include('../config/styles.css');
         <h1><?php echo $movie['Title']; ?></h1>
         <p>Release Date: <?php echo $movie['ReleaseDate']; ?></p>
         <p>Summary: <?php echo $movie['Summary']; ?></p>
+
+        <!-- Display the movie image -->
+        <?php
+        if (!empty($movie['ImagePath'])) {
+            echo '<img src="' . $movie['ImagePath'] . '" alt="Movie Image">';
+        }
+        ?>
     </div>
 
     <!-- Average rating -->
