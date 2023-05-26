@@ -180,4 +180,94 @@ form {
 .nav-links a {
   margin-right: 50px;
 }
+
+/* Movie Page */
+.movie-box {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+.movie-info {
+  margin-bottom: 20px;
+}
+
+.movie-info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.movie-info p {
+  margin-bottom: 5px;
+}
+
+.rating {
+  margin-bottom: 20px;
+}
+
+.rating h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.rating p {
+  margin-bottom: 5px;
+}
+
+.rating-form {
+  margin-bottom: 20px;
+}
+
+.comment-form {
+  margin-bottom: 20px;
+}
+
+.comment-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.comments {
+  margin-bottom: 20px;
+}
+
+.comments h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comments ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comments li {
+  margin-bottom: 10px;
+}
+
+.comments li p {
+  margin-bottom: 5px;
+}
+
+.friend-request-button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
 </style>
