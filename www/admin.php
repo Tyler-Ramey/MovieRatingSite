@@ -9,7 +9,7 @@ include_once('..\config\styles.css');
 
 <?php require('..\config\header.php'); ?>
 <div class='add-movie-container'>
-    <form action="process-movie.php" method="POST" enctype="multipart/form-data">
+    <form action="add-movie.php" method="POST" enctype="multipart/form-data">
     <label for="title">Title:</label>
     <input type="text" name="title" id="title" required>
     <br>
