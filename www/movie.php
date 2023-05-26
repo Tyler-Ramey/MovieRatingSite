@@ -34,6 +34,18 @@ include('../config/styles.css');
     $totalRatings = $result['totalRatings'];
     $totalRating = $result['totalRating'];
     $averageRating = $totalRatings > 0 ? $totalRating / $totalRatings : 0;
+
+    // Check if the user has already rated the movie
+    $userRating = null;
+    if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+        $sql = 'SELECT Rating FROM ratings WHERE MovieID = :id AND Username = :username';
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':id', $movieID);
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        $userRating = $stmt->fetchColumn();
+    }
     ?>
 
     <!-- Movie information -->
@@ -58,7 +70,7 @@ include('../config/styles.css');
                     <input type="hidden" name="movieID" value="' . $movieID . '">
                     <input type="hidden" name="username" value="' . $_SESSION['username'] . '">
                     <label for="rating">Your Rating:</label>
-                    <input type="number" name="rating" min="1" max="10" step="0.5" required>
+                    <input type="number" name="rating" min="1" max="10" step="0.5" value="' . $userRating . '" required>
                     <br>
                     <input type="submit" value="Submit Rating">
                 </form>
@@ -102,7 +114,12 @@ include('../config/styles.css');
             echo '<p><strong>Username:</strong> ' . $comment['Username'] . '</p>';
             echo '<p><strong>Comment:</strong> ' . $comment['Comment'] . '</p>';
             echo '<p><strong>Post Date:</strong> ' . $comment['PostDate'] . '</p>';
-            echo '<button class="friend-request-button">Send Friend Request</button>';
+
+            // Display the friend request button only if the comment is not made by the current user
+            if ($comment['Username'] !== $_SESSION['username']) {
+                echo '<button class="friend-request-button">Send Friend Request</button>';
+            }
+
             echo '</li>';
         }
         echo '</ul>';
