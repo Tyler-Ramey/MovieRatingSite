@@ -124,8 +124,15 @@ include('../config/styles.css');
 
             // Display the friend request button only if the comment is not made by the current user
             if ($comment['Username'] !== $_SESSION['username']) {
-                echo '<button class="friend-request-button">Send Friend Request</button>';
+                echo '
+        <form class="friend-request-form" action="send-friend-request.php" method="POST">
+            <input type="hidden" name="receiver" value="' . $comment['Username'] . '">
+            <input type="hidden" name="movieID" value="' . $movieID . '">
+            <button type="submit" class="friend-request-button">Send Friend Request</button>
+        </form>
+    ';
             }
+
 
             echo '</li>';
 
