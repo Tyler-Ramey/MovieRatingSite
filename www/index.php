@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,6 +25,5 @@
         </main>
 
         <?php require('..\config\footer.php'); ?>
-
     </body>
 </html>
