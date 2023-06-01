@@ -85,16 +85,21 @@ if (!$user) {
 
                     if ($recentMovies) {
                         echo '<ul>';
-                        foreach ($recentMovies as $movie) {
+                        $count = count($recentMovies);
+                        foreach ($recentMovies as $key => $movie) {
                             echo '<li>';
                             echo '<p><strong>Title:</strong> ' . $movie['Title'] . '</p>';
                             echo '<p><strong>Rating:</strong> ' . $movie['Rating'] . '</p>';
+                            if ($key < $count - 1) {
+                                echo '<hr>'; // Add line break between each movie except the last one
+                            }
                             echo '</li>';
                         }
                         echo '</ul>';
                     } else {
                         echo "<p>No recent rated movies found.</p>";
                     }
+
                     ?>
                 </div>
             </div>
