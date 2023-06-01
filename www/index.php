@@ -12,14 +12,14 @@
         <?php require('..\config\header.php'); ?>
         <main class="main">
             <div class="left-sidebar">
-                <?php require('..\config\friends.php'); ?>
+                <?php require('friends.php'); ?>
             </div>
             <div class="content">
                 <h2>Recent Movies</h2>
                 <?php require('home-page.php'); ?>
             </div>
             <div class="right-sidebar">
-                <?php require('..\config\activity.php'); ?>
+                <?php require('activity.php'); ?>
             </div>
         </main>
 
