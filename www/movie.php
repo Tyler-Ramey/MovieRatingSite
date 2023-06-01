@@ -6,7 +6,7 @@ include('../config/styles.css');
 
 <div class="movie-box">
     <?php
-    // Get the movie ID from the query parameters or any other source
+    // Get the movie ID
     session_start();
     $movieID = $_GET['id'];
 

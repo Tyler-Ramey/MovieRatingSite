@@ -1,5 +1,4 @@
 <?php
-// Include the necessary files and establish the database connection
 require_once('../config/dbconnect.php');
 
 // Check if the user is logged in
@@ -16,7 +15,7 @@ $sender = $_SESSION['username'];
 // Get the receiver's username from the form submission
 $receiver = $_POST['receiver'];
 
-// Get the movie ID from the query parameters or any other source
+// Get the movie ID
 $movieID = $_POST['movieID'];
 
 // Prepare and execute a query to check if a friend request already exists
@@ -28,7 +27,7 @@ $stmt->execute();
 $existingRequest = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($existingRequest) {
-    // Friend request already exists, handle accordingly (display an error message, redirect, etc.)
+    // Friend request already exists
     echo 'Friend request already sent.';
     redirectWithDelay('movie.php?id=' . $movieID, 5);
     exit();
@@ -41,15 +40,15 @@ $stmt->bindParam(':sender', $sender);
 $stmt->bindParam(':receiver', $receiver);
 $stmt->execute();
 
-// Handle the success case (e.g., display a success message, redirect back to the same movie page, etc.)
+// Handle the success case
 echo 'Friend request sent successfully.';
 redirectWithDelay('movie.php?id=' . $movieID, 5);
 
 /**
  * Redirects to the specified URL after a given delay.
  *
- * @param string $url The URL to redirect to.
- * @param int $delay The delay in seconds.
+ * param string $url - The URL to redirect to.
+ * param int $delay - The delay in seconds.
  */
 function redirectWithDelay($url, $delay)
 {

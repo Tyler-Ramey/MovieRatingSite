@@ -5,7 +5,6 @@
         <title>Movie Site</title>
 
         <?php
-        // require('config.php');
         include_once('..\config\styles.css');
         ?>
     </head>

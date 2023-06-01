@@ -55,7 +55,7 @@ function generateUniqueFilename($movieName, $extension) {
 
 // Function to check if the file type is allowed
 function isFileTypeAllowed($fileType) {
-    $allowedTypes = ['image/jpeg', 'image/png']; // Add more allowed file types if needed
+    $allowedTypes = ['image/jpeg', 'image/png'];
     return in_array($fileType, $allowedTypes);
 }
 
