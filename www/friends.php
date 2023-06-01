@@ -56,7 +56,11 @@
         if ($friends) {
             echo '<ul>';
             foreach ($friends as $friend) {
-                echo '<li>' . $friend['friendUsername'] . '</li>';
+                echo '<li>';
+                echo '<a href="user.php?username=' . $friend['friendUsername'] . '">';
+                echo $friend['friendUsername'];
+                echo '</a>';
+                echo '</li>';
             }
             echo '</ul>';
         } else {
