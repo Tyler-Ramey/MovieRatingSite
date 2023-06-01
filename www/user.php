@@ -79,7 +79,7 @@ if (!$user) {
                     WHERE r.Username = :username
                     LIMIT 10';
                     $stmt = $pdo->prepare($sql);
-                    $stmt->bindParam(':username', $user['username']);
+                    $stmt->bindParam(':username', $user['Username']);
                     $stmt->execute();
                     $recentMovies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
