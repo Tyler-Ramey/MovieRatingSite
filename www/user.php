@@ -45,17 +45,18 @@ if (!$user) {
                     <h1><?php echo $user['Username']; ?></h1>
                     <div class="profile-picture">
                         <!-- Display the user's profile picture here -->
-                        <img src="path/to/profile_picture.jpg" alt="Profile Picture">
+                        <img src="<?php echo $user['ProfilePicture']; ?>" alt="Profile Picture">
                     </div>
                     <div class="user-info">
                         <h2>User Information</h2>
                         <?php if ($user['Username'] === $_SESSION['username']): ?>
                         <!-- Editable form for the currently logged-in user -->
-                        <form action="update_user.php" method="POST">
+                        <form action="update-user.php" method="POST" enctype="multipart/form-data">
                             <p><strong>Username:</strong> <?php echo $user['Username']; ?></p>
                             <p><strong>Email:</strong> <input type="email" name="email" value="<?php echo $user['Email']; ?>"></p>
                             <p><strong>First Name:</strong> <input type="text" name="firstname" value="<?php echo $user['FirstName']; ?>"></p>
                             <p><strong>Last Name:</strong> <input type="text" name="lastname" value="<?php echo $user['LastName']; ?>"></p>
+                            <input type="file" name="profile_picture">
                             <button type="submit">Update Information</button>
                         </form>
                         <?php else: ?>
@@ -74,10 +75,10 @@ if (!$user) {
                     <?php
                     // Get the user's recent rated movies from the database
                     $sql = 'SELECT m.Title, r.Rating
-                    FROM movies AS m
-                    JOIN ratings AS r ON m.MovieID = r.MovieID
-                    WHERE r.Username = :username
-                    LIMIT 10';
+                FROM movies AS m
+                JOIN ratings AS r ON m.MovieID = r.MovieID
+                WHERE r.Username = :username
+                LIMIT 10';
                     $stmt = $pdo->prepare($sql);
                     $stmt->bindParam(':username', $user['Username']);
                     $stmt->execute();
@@ -99,7 +100,6 @@ if (!$user) {
                     } else {
                         echo "<p>No recent rated movies found.</p>";
                     }
-
                     ?>
                 </div>
             </div>
