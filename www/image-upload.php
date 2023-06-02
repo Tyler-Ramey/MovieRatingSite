@@ -14,7 +14,7 @@ function uploadImage($title, $file)
             die('Error: Invalid file type. Only JPEG and PNG files are allowed.');
         }
 
-        // Generate a unique filename for the uploaded image based on the movie title
+        // Generate a unique filename for the uploaded image based on the param $title
         $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
         $uniqueFilename = generateUniqueFilename($title, $fileExtension);
 
