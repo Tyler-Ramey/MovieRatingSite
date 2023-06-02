@@ -1,6 +1,6 @@
 <?php
 require_once('../config/dbconnect.php');
-require_once('image_upload.php');
+require_once('image-upload.php');
 
 $title = $_POST['title'];
 $releaseDate = $_POST['release-date'];
