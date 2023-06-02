@@ -17,6 +17,12 @@ body {
     background-color: #eee;
 }
 
+.username {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
 .logo {
     width: auto;
     height: auto;
